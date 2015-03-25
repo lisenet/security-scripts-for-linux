@@ -1,2 +1,2 @@
 # security-scripts-for-linux
-Various scripts to check for web application, Linux OS etc vulnerabilities.
+Various scripts to check for web applications, Linux OS etc vulnerabilities.
