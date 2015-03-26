@@ -43,41 +43,33 @@ libyaml-dev libsqlite3-dev libpcre3 libpcre3-dev libidn11-dev openssl git -y;
 #
 sudo apt-get install nmap -y;
 #
-# LYNIS
+# LYNIS from GitHub
 #
-wget https://cisofy.com/files/lynis-2.0.0.tar.gz;
-tar xvfz lynis-2.0.0.tar.gz;
-sudo chown -R root:root ./lynis/include;
-sudo chmod 600 ./lynis/include;
+git clone https://github.com/CISOfy/Lynis.git
+sudo chown -R root:root ./Lynis/include;
+sudo chmod 600 ./Lynis/include;
 #
-# NIKTO
+# NIKTO from GitHub
 #
-wget http://cirt.net/nikto/nikto-2.1.5.tar.gz;
-tar xvfz ./nikto-2.1.5.tar.gz;
-mv ./nikto-2.1.5 ./nikto;
+git clone https://github.com/sullo/nikto.git
 chown -R "$USER":"$USER" ./nikto;
-chmod u+x ./nikto/nikto.pl;
-./nikto/nikto.pl -update;
+chmod u+x ./nikto/program/nikto.pl;
 #
-# WAPITI
+# WAPITI from GitHub
 #
-wget http://netcologne.dl.sourceforge.net/project/wapiti/wapiti/wapiti-2.3.0/wapiti-2.3.0.tar.gz;
-tar xvfz wapiti-2.3.0.tar.gz;
-mv ./wapiti-2.3.0 ./wapiti;
+git clone https://github.com/IFGHou/wapiti.git
 chown -R "$USER":"$USER" ./wapiti;
 chmod u+x ./wapiti/bin/wapiti;
 #
-# W3AF
+# W3AF from GitHub
 #
 git clone https://github.com/andresriancho/w3af.git;
 chown -R "$USER":"$USER" ./w3af;
 chmod u+x ./w3af/w3af_console;
 #
-# ARACHNI
+# ARACHNI from GitHub
 #
-wget http://downloads.arachni-scanner.com/arachni-1.0.6-0.5.6-linux-x86_64.tar.gz
-tar xvfz arachni-1.0.6-0.5.6-linux-x86_64.tar.gz;
-mv arachni-1.0.6-0.5.6 arachni;
+git clone https://github.com/Arachni/arachni.git
 chown -R "$USER":"$USER" ./arachni;
 #
 # SKIPFISH
@@ -88,8 +80,7 @@ mv ./skipfish-2.10b ./skipfish;
 chown -R "$USER":"$USER" ./skipfish;
 cd ./skipfish && make;
 
-# Remote all tarballs and wget as these are no longer needed
-rm -v "$DIR"/*gz;
-sudo apt-get autoremove wget -y;
+# Remote all tarballs as these are no longer needed
+rm -v "$DIR"/*tgz;
 
 exit 0
