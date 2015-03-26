@@ -37,7 +37,11 @@ sudo apt-get update;
 sudo apt-get install perl perl-modules libnet-ssleay-perl libwhisker2-perl \
 python2.7 python2.7-dev python-requests python-ctypes python-beautifulsoup \
 python-pip python-gitdb python-yaml libssl-dev libxml2-dev libxslt1-dev wget \
-libyaml-dev libsqlite3-dev libpcre3 libpcre3-dev libidn11-dev openssl git -y;
+libyaml-dev libsqlite3-dev libpcre3 libpcre3-dev libidn11-dev openssl git \
+build-essential libffi-dev -y;
+
+# Required by Wapiti
+sudo pip install --no-cache-dir -q BeautifulSoup4;
 #
 # NMAP
 #
@@ -67,9 +71,11 @@ git clone https://github.com/andresriancho/w3af.git;
 chown -R "$USER":"$USER" ./w3af;
 chmod u+x ./w3af/w3af_console;
 #
-# ARACHNI from GitHub
+# ARACHNI
 #
-git clone https://github.com/Arachni/arachni.git
+wget http://downloads.arachni-scanner.com/arachni-1.0.6-0.5.6-linux-x86_64.tar.gz
+tar xvfz arachni-1.0.6-0.5.6-linux-x86_64.tar.gz
+mv arachni-1.0.6-0.5.6 arachni
 chown -R "$USER":"$USER" ./arachni;
 #
 # SKIPFISH
