@@ -87,6 +87,6 @@ chown -R "$USER":"$USER" ./skipfish;
 cd ./skipfish && make;
 
 # Remote all tarballs as these are no longer needed
-rm -v "$DIR"/*tgz;
+rm -v "$DIR"/*gz;
 
 exit 0
