@@ -1,5 +1,8 @@
 # security-scripts-for-linux
 Various scripts to check for web applications, Linux OS etc vulnerabilities. Damn Vulnerable Web App (DVWA) is a good starting point.
+
+DISCLAIMER: you may be better off using Kali Linux for pen testing etc. 
+
 ## sec-tools-installer
 Bash script that installs the following tools:
 * Nmap
